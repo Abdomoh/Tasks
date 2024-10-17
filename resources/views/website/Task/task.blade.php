@@ -46,12 +46,17 @@
                                             <p class="card-text">With supporting text below as a natural lead-in to
                                                 additional
                                                 content.</p>
-                                            <a href="#"><i class="bi bi-pencil-square"
-                                                    style="color: blue;font-size: 30px;"></i></a>
+                                                <form action="{{ route('tasks.destroy',$tas->id) }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                            <a href="{{ route('tasks.edit',$tas->id) }}"><i class="bi bi-pencil-square"
+                                                    style="color: blue;font-size: 25px;"></i></a>
+                                                 
 
-                                            <a href=""><i class="bi bi-file-x"
-                                                    style="color: red;font-size: 30px;"></i>
-                                            </a>
+                                            <button type="submit" class="btn btn-sm"><i class="bi bi-file-x"
+                                                    style="color: red;font-size: 25px;"></i>
+                                            </submit>
+                                        </form>
 
 
                                         </div>
@@ -135,6 +140,7 @@
                     </div>
                 </div>
                 <!--  End Model    -->
+
 
         </main><!-- End #main -->
 

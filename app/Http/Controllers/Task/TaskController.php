@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Task;
 
 use App\Models\Catogry;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TaskStoreFormRequest;
 use App\Models\Task;
@@ -16,6 +15,11 @@ class TaskController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+     public function search()
+     {
+        return view('search');
+     }
     public function index(Request  $request)
     {
         $search = $request->input('search');
@@ -72,7 +76,9 @@ class TaskController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $categoryies = Catogry::all();
+        $task = Task::find($id);
+        return view('website.Task.edit', ['categoryies' => $categoryies, 'task' => $task]);
     }
 
     /**
@@ -80,8 +86,12 @@ class TaskController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $task = Task::find($id);
+        $task->update($request->all());
+        toastr()->timeout(4000)->addInfo('تم تعديل المهمة بنجاح');
+        return redirect('tasks');
     }
+    
 
     /**
      * Remove the specified resource from storage.
