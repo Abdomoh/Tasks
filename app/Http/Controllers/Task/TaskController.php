@@ -16,17 +16,13 @@ class TaskController extends Controller
      * Display a listing of the resource.
      */
 
-     public function search()
-     {
-        return view('search');
-     }
     public function index(Request  $request)
     {
         $search = $request->input('search');
         $task = Task::where('title', 'like', "%$search%")->paginate(3);
 
         $catogry = Catogry::all();  //// get all catgory
-        return view('website.Task.task', compact('catogry', 'task'));
+        return view('website.Task.task', (['catogry' => $catogry, 'task' => $task]));
     }
 
     public function getCatogry()
@@ -91,7 +87,7 @@ class TaskController extends Controller
         toastr()->timeout(4000)->addInfo('تم تعديل المهمة بنجاح');
         return redirect('tasks');
     }
-    
+
 
     /**
      * Remove the specified resource from storage.

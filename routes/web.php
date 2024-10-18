@@ -22,7 +22,6 @@ Route::get('/', function () {
 
 ////// Route Mange Tasks
 Route::group(['prefix', 'middleware' => ['auth']], function () {
-    Route::get('search',[TaskController::class, 'search']);
     Route::get('catogry', [TaskController::class, 'getCatogry']);
     Route::resource('tasks', TaskController::class);
 });
