@@ -96,7 +96,7 @@ class TaskController extends Controller
     {
         $task = Task::find($id);
         $task->delete();
-        toastr()->timeout(3000)->addError('تم حزف المهمة بنجاح');
+        toastr()->timeout(4000)->addError('تم حزف المهمة بنجاح');
         return back();
     }
 }

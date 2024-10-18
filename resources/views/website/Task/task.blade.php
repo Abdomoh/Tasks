@@ -43,9 +43,7 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <h5 class="card-title">{{ $tas->title }}</h5>
-                                            <p class="card-text">With supporting text below as a natural lead-in to
-                                                additional
-                                                content.</p>
+                                            <p class="card-text">{{$tas->description}}</p>
                                                 <form action="{{ route('tasks.destroy',$tas->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
@@ -64,7 +62,7 @@
                                 </div>
                             @endforeach
                         @else
-                            <p>لاتوجد بيانات متطابقة</p>
+                            <p>لاتوجد بيانات </p>
                         @endif
 
                     </div>

@@ -18,7 +18,7 @@ use App\Http\Controllers\Task\TaskController;
 
 Route::get('/', function () {
     return view('index');
-})->middleware('auth');
+});
 
 ////// Route Mange Tasks
 Route::group(['prefix', 'middleware' => ['auth']], function () {
