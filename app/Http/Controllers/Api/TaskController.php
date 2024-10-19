@@ -17,7 +17,7 @@ class TaskController extends Controller
     use ApiResponser;
     public function index()
     {
-        $tasks = Task::with('catogry')->paginate(5);
+        $tasks = Task::with('catogry')->latest()->paginate(5);
         return $this->success(['tasks' => $tasks]);
     }
 

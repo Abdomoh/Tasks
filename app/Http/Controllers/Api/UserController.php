@@ -22,7 +22,7 @@ class UserController extends Controller
     use ApiResponser;
     public function index()
     {
-        $users = User::query()->paginate(5);
+        $users = User::latest()->paginate(5);
         return $this->success(['users' => $users]);
     }
 
