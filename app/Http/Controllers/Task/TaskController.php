@@ -19,7 +19,7 @@ class TaskController extends Controller
     public function index(Request  $request)
     {
         $search = $request->input('search');
-        $task = Task::where('title', 'like', "%$search%")->paginate(3);
+        $task = Task::where('user_id', Auth::user()->id ?? '')->where('title', 'like', "%$search%")->paginate(3);
 
         $catogry = Catogry::all();  //// get all catgory
         return view('website.Task.task', (['catogry' => $catogry, 'task' => $task]));
