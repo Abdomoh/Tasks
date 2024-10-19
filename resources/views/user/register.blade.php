@@ -44,7 +44,7 @@
                         <div class="text-center"> <button type="submit" class="btn btn-success btn-block text-white" value="انشاء حساب "> <i class="fa fa-plus"></i> انشاء حساب </button>
 
                         </div>
-                        <p>  هل لديك حساب بالفعل ؟ <a href="https://bootstrapmade.com/" class="text-blue">اضغط هنا لتسجيل الدخول</a></p>
+                        <p>  هل لديك حساب بالفعل ؟ <a href="{{ route('login') }}" class="text-blue">اضغط هنا لتسجيل الدخول</a></p>
                 </form>
               
             </div>
