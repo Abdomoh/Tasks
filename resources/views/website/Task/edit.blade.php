@@ -8,7 +8,7 @@
             <section id="servicess" dir="rtl">
                 <div class="container" data-aos="fade-up">
                     <div class="section-header">
-                        <h2> قائمة المهام اليومية</h2>
+                        <h2>       تعديل بيانات المهام</h2>
                     </div>
                     @include('errors._message')
                     <div class="col-lg-6">
